@@ -1,0 +1,18 @@
+server:
+  port: 8901
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/it-yayu/spring-cloud-config-test.git
+          username: 15735653659@163.com
+          password: yy761769578
+          clone-on-start: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://xyy:123@192.168.0.36:8002/eureka/,http://xyy:123@192.168.0.36:8003/eureka/
+

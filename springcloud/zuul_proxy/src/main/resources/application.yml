@@ -1,0 +1,25 @@
+server:
+  port: 8801
+spring:
+  application:
+    name: zuul-proxy
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://xyy:123@192.168.0.36:8002/eureka/,http://xyy:123@192.168.0.36:8003/eureka/
+zuul:
+  routes: #\u7ED9\u670D\u52A1\u914D\u7F6E\u8DEF\u7531
+    user-service:
+      path: /user-service/**
+    feign-service:
+      path: /feign-service/**
+  prefix: /xyy
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'routes'   #\u5F00\u542F\u67E5\u770B\u8DEF\u7531\u7684\u7AEF\u70B9
+
+

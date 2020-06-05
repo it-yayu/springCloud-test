@@ -1,0 +1,19 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: eureka-server
+  security: #配置SpringSecurity登录用户名和密码
+    user:
+      name: xyy
+      password: 123
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://xyy:123@192.168.0.36:8002/eureka/ #注册到另一个Eureka注册中心
+    fetch-registry: true
+    register-with-eureka: true
+
+
